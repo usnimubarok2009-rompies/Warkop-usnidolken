@@ -1,1 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Warkop Tempat Lupa Masalah (sementara) | Profil & Data UMKM</title>
+    <!-- Tailwind CSS + Fonts + Animasi -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom sedikit untuk efek hover smooth dan fade in -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .card-hover {
+            transition: all 0.25s ease-in-out;
+        }
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.1), 0 4px 8px -4px rgba(0, 0, 0, 0.05);
+        }
+        .btn-hover {
+            transition: all 0.2s ease;
+        }
+        .btn-hover:hover {
+            transform: scale(1.02);
+            background-color: #0b5e42;
+        }
+        /* scroll smooth */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* custom range & input focus style */
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            ring: 2px solid #2c7a4d;
+            border-color: #2c7a4d;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-emerald-50 via-white to-teal-50">
 
+    <!-- Container Utama -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        
+        <!-- Header dengan animasi fade in -->
+        <div class="text-center mb-10 fade-in">
+            <div class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 px-4 py-1 rounded-full text-sm font-medium mb-4">
+                <i class="fas fa-mug-hot"></i> <span>UMKM Kreatif • Warkop Humor Gelap Ringan</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 tracking-tight">☕ Warkop <span class="text-emerald-700">Tempat Lupa Masalah</span> <span class="text-gray-500">(sementara)</span></h1>
+            <p class="text-gray-600 max-w-2xl mx-auto mt-3 text-base md:text-lg">Nongkrong santai, kopi unik, menu penuh realita, dan harga bersahabat.<br> Datang 19.00 – 03.00, bawa lupa—masalah titip di pintu.</p>
+        </div>
+
+        <!-- Grid: Kiri (Form Informasi UMKM) & Kanan (Preview Data) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 fade-in" style="animation-delay: 0.1s;">
+            
+            <!-- Kolom Kiri: Form Lengkap UMKM -->
+            <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-emerald-100 p-5 md:p-6 card-hover transition-all">
+                <div class="flex items-center gap-3 border-b border-emerald-200 pb-3 mb-5">
+                    <i class="fas fa-store text-2xl text-emerald-700"></i>
+                    <h2 class="text-xl font-bold text-gray-800">📋 Data Lengkap UMKM</h2>
+                </div>
+                <form id="umkmForm" class="space-y-5">
+                    <!-- Nama UMKM -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-1 text-sm"><i class="fas fa-building mr-1 text-emerald-600"></i> Nama UMKM</label>
+                        <input type="text" id="namaUmkm" value="warkop tempat lupa masalah(sementara)" class="w-full border border-gray-300 rounded-xl px-4 py-2.5 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-400 transition bg-gray-50">
+                    </div>
+                    <!-- Nama Pemilik -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-1 text-sm"><i class="fas fa-user mr-1 text-emerald-600"></i> Nama Pemilik</label>
+                        <input type="text" id="namaPemilik" value="usni dolken" class="w-full border border-gray-300 rounded-xl px-4 py-2.5 focus:border-emerald-500 bg-gray-50">
+                    </div>
+                    <!-- Alamat Lengkap -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-1 text-sm"><i class="fas fa-location-dot mr-1 text-emerald-600"></i> Alamat Lengkap</label>
+                        <input type="text" id="alamat" value="jl.harvard RT.01/RW.002" class="w-full border border-gray-300 rounded-xl px-4 py-2.5 bg-gray-50">
+                    </div>
+                    <!-- No HP -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-1 text-sm"><i class="fab fa-whatsapp mr-1 text-emerald-600"></i> No. HP / WhatsApp</label>
+                        <input type="tel" id="noHp" value="089123454456" class="w-full border border-gray-300 rounded-xl px-4 py-2.5 bg-gray-50">
+                    </div>
+                    <!-- Email (opsional) -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-1 text-sm"><i class="fas fa-envelope mr-1 text-emerald-600"></i> Email (opsional)</label>
+                        <input type="email" id="email" value="usnidolken@gmail.com" class="w-full border border-gray-300 rounded-xl px-4 py-2.5 bg-gray-50">
+                    </div>
+                    <!-- Deskripsi Usaha -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-1 text-sm"><i class="fas fa-align-left mr-1 text-emerald-600"></i> Deskripsi Usaha</label>
+                        <textarea id="deskripsi" rows="2" class="w-full border border-gray-300 rounded-xl px-4 py-2.5 bg-gray-50">WARKOP TEMPAT LUPA MASALAH(sementara) Adalah UMKM yang menghadirkan aneka rasa makanan dan minuman dengan nama yang unik warkop</textarea>
+                    </div>
+                    <!-- Kategori Usaha -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-1 text-sm"><i class="fas fa-tag mr-1 text-emerald-600"></i> Kategori Usaha</label>
+                        <input type="text" id="kategori" value="Warkop Humor Gelap Ringan" class="w-full border border-gray-300 rounded-xl px-4 py-2.5 bg-gray-50">
+                    </div>
+                    <!-- Jam Operasional -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-1 text-sm"><i class="fas fa-clock mr-1 text-emerald-600"></i> Jam Operasional</label>
+                        <input type="text" id="jamOperasional" value="19.00-03.00" class="w-full border border-gray-300 rounded-xl px-4 py-2.5 bg-gray-50">
+                    </div>
+                    
+                    <!-- Tombol Update -->
+                    <div class="pt-2">
+                        <button type="button" id="updatePreviewBtn" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold py-2.5 rounded-xl shadow-md transition btn-hover flex items-center justify-center gap-2">
+                            <i class="fas fa-sync-alt"></i> Perbarui Info & Preview
+                        </button>
+                    </div>
+                    <p class="text-xs text-gray-400 text-center mt-2">✨ Data yang diubah akan langsung tampil di panel sebelah kanan</p>
+                </form>
+            </div>
+            
+            <!-- Kolom Kanan: Preview Ringkasan UMKM + Daftar Produk & Harga -->
+            <div class="bg-white rounded-2xl shadow-lg border border-emerald-100 p-5 md:p-6 card-hover transition-all">
+                <div class="flex items-center gap-3 border-b border-emerald-200 pb-3 mb-5">
+                    <i class="fas fa-eye text-xl text-emerald-700"></i>
+                    <h2 class="text-xl font-bold text-gray-800">📄 Info & Preview Data</h2>
+                </div>
+                <div id="previewContainer" class="space-y-5">
+                    <!-- Data preview dinamis diisi javascript -->
+                    <div class="bg-emerald-50/50 rounded-xl p-4 space-y-2 text-sm">
+                        <div class="flex flex-wrap gap-2 justify-between items-start border-b border-emerald-100 pb-2">
+                            <span class="font-bold text-gray-700"><i class="fas fa-store"></i> UMKM:</span>
+                            <span id="previewNama" class="text-gray-800 font-medium">warkop tempat lupa masalah(sementara)</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 justify-between">
+                            <span class="font-bold text-gray-700"><i class="fas fa-user"></i> Pemilik:</span>
+                            <span id="previewPemilik" class="text-gray-700">usni dolken</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 justify-between">
+                            <span class="font-bold text-gray-700"><i class="fas fa-location-dot"></i> Alamat:</span>
+                            <span id="previewAlamat" class="text-gray-700">jl.harvard RT.01/RW.002</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 justify-between">
+                            <span class="font-bold text-gray-700"><i class="fab fa-whatsapp"></i> Kontak:</span>
+                            <span id="previewKontak" class="text-gray-700">089123454456</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 justify-between">
+                            <span class="font-bold text-gray-700"><i class="fas fa-envelope"></i> Email:</span>
+                            <span id="previewEmail" class="text-gray-700">usnidolken@gmail.com</span>
+                        </div>
+                        <div>
+                            <span class="font-bold text-gray-700 block mb-1"><i class="fas fa-align-left"></i> Deskripsi:</span>
+                            <p id="previewDeskripsi" class="text-gray-600 text-sm leading-relaxed">WARKOP TEMPAT LUPA MASALAH(sementara) Adalah UMKM yang menghadirkan aneka rasa makanan dan minuman dengan nama yang unik warkop</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 justify-between">
+                            <span class="font-bold text-gray-700"><i class="fas fa-tag"></i> Kategori:</span>
+                            <span id="previewKategori" class="text-emerald-700 font-medium">Warkop Humor Gelap Ringan</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 justify-between">
+                            <span class="font-bold text-gray-700"><i class="fas fa-clock"></i> Jam Buka:</span>
+                            <span id="previewJam" class="text-gray-700">19.00-03.00</span>
+                        </div>
+                    </div>
+                    <!-- Deskripsi singkat warkop -->
+                    <div class="bg-gradient-to-r from-amber-50 to-emerald-50 p-4 rounded-xl border border-amber-100">
+                        <p class="text-sm italic text-gray-700"><i class="fas fa-quote-left text-emerald-500 mr-1"></i> Warkop Tempat Lupa Masalah Sementara adalah tempat nongkrong santai dengan kopi, minuman segar, dan camilan terjangkau—cocok buat rehat sejenak, ngopi, dan “menunda masalah” bareng suasana hangat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- DAFTAR PRODUK LENGKAP - Menu dengan harga dan nama unik (style grid modern) -->
+        <div class="mt-12 fade-in" style="animation-delay: 0.2s;">
+            <div class="flex items-center gap-3 justify-center mb-6">
+                <i class="fas fa-utensils text-2xl text-emerald-700"></i>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">🍽️ Menu Spesial <span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-lg">Realita Rasa</span></h2>
+            </div>
+            
+            <!-- Grid produk sesuai urutan: Minuman, Minuman Segar, Makanan Berat, Snack, Paket Viral -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 1. Minuman (Ngopi Realita) -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-all card-hover">
+                    <div class="bg-amber-800 px-4 py-2 text-white font-bold flex items-center gap-2"><i class="fas fa-mug-hot"></i> ☕ Minuman (Ngopi Realita)</div>
+                    <ul class="p-4 space-y-2 text-sm">
+                        <li class="flex justify-between border-b border-gray-100 pb-1"><span>Kopi “Pahitnya Gak Ada Obat”</span><span class="font-medium text-emerald-700">Rp7.000</span></li>
+                        <li class="flex justify-between border-b border-gray-100 pb-1"><span>Kopi “Udah Capek Tapi Gak Kemana-mana”</span><span class="font-medium text-emerald-700">Rp7.000</span></li>
+                        <li class="flex justify-between border-b border-gray-100 pb-1"><span>Es Kopi “Dingin Kayak Chat Dia”</span><span class="font-medium text-emerald-700">Rp10.000</span></li>
+                        <li class="flex justify-between border-b border-gray-100 pb-1"><span>Kopi Susu “Manisnya Cuma Di Mulut”</span><span class="font-medium text-emerald-700">Rp12.000</span></li>
+                        <li class="flex justify-between"><span>Kopi “Harapan Tinggi, Realita Rendah”</span><span class="font-medium text-emerald-700">Rp8.000</span></li>
+                    </ul>
+                </div>
+                <!-- 2. Minuman Segar -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="bg-teal-700 px-4 py-2 text-white font-bold flex items-center gap-2"><i class="fas fa-glass-cheers"></i> 🧊 Minuman Segar</div>
+                    <ul class="p-4 space-y-2 text-sm">
+                        <li class="flex justify-between border-b"><span>Es Jeruk “Asamnya Hidup”</span><span class="text-emerald-700 font-medium">Rp8.000</span></li>
+                        <li class="flex justify-between border-b"><span>Es Kocok “Dikocok Biar Lupa Diri”</span><span class="text-emerald-700 font-medium">Rp12.000</span></li>
+                        <li class="flex justify-between border-b"><span>Es Susu “susu kembar rasa pahitnya hidup”</span><span class="text-emerald-700 font-medium">Rp12.000</span></li>
+                        <li class="flex justify-between"><span>Es Milo “Kuat Tapi Rapuh”</span><span class="text-emerald-700 font-medium">Rp13.000</span></li>
+                    </ul>
+                </div>
+                <!-- 3. Makanan Berat -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="bg-orange-700 px-4 py-2 text-white font-bold"><i class="fas fa-utensil-spoon"></i> 🍜 Makanan Berat</div>
+                    <ul class="p-4 space-y-2 text-sm">
+                        <li class="flex justify-between border-b"><span>Mie Goreng “Hidup Tanpa Arah”</span><span class="font-medium text-emerald-700">Rp15.000</span></li>
+                        <li class="flex justify-between border-b"><span>Indomie “Teman Setia Saat Bangkrut”</span><span class="font-medium text-emerald-700">Rp10.000</span></li>
+                        <li class="flex justify-between border-b"><span>Nasi Ayam “Ditinggal Tanpa Penjelasan”</span><span class="font-medium text-emerald-700">Rp18.000</span></li>
+                        <li class="flex justify-between"><span>Nasi Telur “Minimal Masih Bertahan”</span><span class="font-medium text-emerald-700">Rp15.000</span></li>
+                    </ul>
+                </div>
+                <!-- 4. Snack Cemilan Realita -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="bg-amber-600 px-4 py-2 text-white font-bold"><i class="fas fa-cookie-bite"></i> 🍟 Snack (Cemilan Realita)</div>
+                    <ul class="p-4 space-y-2 text-sm">
+                        <li class="flex justify-between border-b"><span>Kentang “Garing di Luar, Kosong di Dalam”</span><span class="font-medium">Rp11.000</span></li>
+                        <li class="flex justify-between border-b"><span>Roti Bakar “Hangat Tapi Gak Punya Siapa-siapa”</span><span class="font-medium">Rp12.000</span></li>
+                        <li class="flex justify-between border-b"><span>Pisang Goreng “Manis Tapi Cuma Sementara”</span><span class="font-medium">Rp8.000</span></li>
+                        <li class="flex justify-between border-b"><span>Cireng “Kenyal Kayak Janji Kosong”</span><span class="font-medium">Rp7.000</span></li>
+                        <li class="flex justify-between"><span>Sosis Bakar “Dibakar Tanpa Perasaan”</span><span class="font-medium">Rp10.000</span></li>
+                    </ul>
+                </div>
+                <!-- 5. Menu Paket Viral -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover col-span-1 md:col-span-2 lg:col-span-1">
+                    <div class="bg-red-700 px-4 py-2 text-white font-bold"><i class="fas fa-box-open"></i> 😈 Menu Paket (biar viral)</div>
+                    <ul class="p-4 space-y-2 text-sm">
+                        <li>🍱 Paket “Gagal Total” -  Kopi pahit + Cireng + Indomie <span class="block font-semibold text-emerald-700">Rp27.000</span></li>
+                        <li>🍱 Paket “Bertahan Hidup Aja Udah Syukur” - Es Milo + Nasi Telur + Pisgor <span class="block font-semibold text-emerald-700">Rp32.000</span></li>
+                        <li>🍱 Paket “Capek Tapi Gak Bisa Berhenti” - Kopi susu + Mie Goreng + Kentang <span class="block font-semibold text-emerald-700">Rp35.000</span></li>
+                        <li>🍱 Paket “Senyum Demi Bertahan” - Es Jeruk + Nasi Ayam + Roti Bakar <span class="block font-semibold text-emerald-700">Rp38.000</span></li>
+                        <li>🍱 Paket “Ketawa Biar Gak Nangis” - Es Kocok + Sosis Bakar + Pisang Goreng <span class="block font-semibold text-emerald-700">Rp33.000</span></li>
+                    </ul>
+                    <div class="bg-gray-100 text-center text-xs py-1">🤣 Bisa request custom paket sesuai mood galau</div>
+                </div>
+                <!-- Range harga tambahan informasi -->
+                <div class="bg-emerald-100 rounded-xl p-4 flex flex-col justify-center items-center text-center shadow-sm col-span-1 md:col-span-2 lg:col-span-1">
+                    <i class="fas fa-tags text-3xl text-emerald-800 mb-2"></i>
+                    <p class="font-bold text-gray-800">💰 Kisaran Harga Ramah Kantong</p>
+                    <div class="grid grid-cols-2 gap-x-3 gap-y-1 text-sm mt-2">
+                        <span class="bg-white px-2 py-0.5 rounded-full">☕ Kopi hitam: Rp5k - Rp8k</span>
+                        <span class="bg-white px-2 py-0.5 rounded-full">🧊 Minuman kekinian: Rp8k - Rp15k</span>
+                        <span class="bg-white px-2 py-0.5 rounded-full">🍜 Makanan: Rp10k - Rp18k</span>
+                        <span class="bg-white px-2 py-0.5 rounded-full">🍟 Snack: Rp5k - Rp12k</span>
+                    </div>
+                    <p class="text-xs text-gray-600 mt-2">*Harga sewaktu-waktu bisa berubah, tanyakan langsung ke barista galau</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer / Kontak dan info tambahan -->
+        <div class="mt-12 border-t border-emerald-200 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 gap-4 fade-in" style="animation-delay: 0.3s;">
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-emerald-700 transition"><i class="fab fa-instagram"></i> @warkop.lupamasalah</a>
+                <a href="#" class="hover:text-emerald-700 transition"><i class="fab fa-whatsapp"></i> 089123454456</a>
+                <span><i class="far fa-clock"></i> 19.00 - 03.00 (setiap hari)</span>
+            </div>
+            <div class="text-xs text-center">✨ “Lupakan masalah sementara, nikmati kopi dan tawa” ✨</div>
+        </div>
+    </main>
+
+    <!-- SCRIPT untuk preview realtime update data form -->
+    <script>
+        // ambil elemen input & preview
+        const namaUmkm = document.getElementById('namaUmkm');
+        const namaPemilik = document.getElementById('namaPemilik');
+        const alamat = document.getElementById('alamat');
+        const noHp = document.getElementById('noHp');
+        const email = document.getElementById('email');
+        const deskripsi = document.getElementById('deskripsi');
+        const kategori = document.getElementById('kategori');
+        const jamOperasional = document.getElementById('jamOperasional');
+        
+        const previewNama = document.getElementById('previewNama');
+        const previewPemilik = document.getElementById('previewPemilik');
+        const previewAlamat = document.getElementById('previewAlamat');
+        const previewKontak = document.getElementById('previewKontak');
+        const previewEmail = document.getElementById('previewEmail');
+        const previewDeskripsi = document.getElementById('previewDeskripsi');
+        const previewKategori = document.getElementById('previewKategori');
+        const previewJam = document.getElementById('previewJam');
+        
+        function updatePreview() {
+            previewNama.innerText = namaUmkm.value.trim() || "warkop tempat lupa masalah(sementara)";
+            previewPemilik.innerText = namaPemilik.value.trim() || "usni dolken";
+            previewAlamat.innerText = alamat.value.trim() || "jl.harvard RT.01/RW.002";
+            previewKontak.innerText = noHp.value.trim() || "089123454456";
+            previewEmail.innerText = email.value.trim() || "usnidolken@gmail.com";
+            previewDeskripsi.innerText = deskripsi.value.trim() || "WARKOP TEMPAT LUPA MASALAH(sementara) Adalah UMKM yang menghadirkan aneka rasa makanan dan minuman dengan nama yang unik warkop";
+            previewKategori.innerText = kategori.value.trim() || "Warkop Humor Gelap Ringan";
+            previewJam.innerText = jamOperasional.value.trim() || "19.00-03.00";
+        }
+        
+        // event untuk tombol update
+        const updateBtn = document.getElementById('updatePreviewBtn');
+        updateBtn.addEventListener('click', updatePreview);
+        
+        // optional: inisialisasi awal (memastikan data default sesuai)
+        updatePreview();
+        
+        // untuk lebih smooth, tambahkan juga event pada tiap input bisa opsional biar realtime, tapi tombol sudah cukup
+        // tapi biar lebih modern, bisa juga realtime? biar user friendly tambah event keyup 
+        const inputs = [namaUmkm, namaPemilik, alamat, noHp, email, deskripsi, kategori, jamOperasional];
+        inputs.forEach(input => {
+            input.addEventListener('input', () => updatePreview());
+        });
+    </script>
+    <!-- Keterangan: Seluruh produk, paket dan harga sesuai request, dimunculkan dengan tampilan grid modern responsif -->
+</body>
+</html>
+```
